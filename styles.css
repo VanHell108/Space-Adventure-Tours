@@ -1,3 +1,15 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
    font-family: Arial, sans-serif;
    background-color: #c1c1c1;
@@ -23,12 +35,18 @@ h2 {
 }
 
 nav {
-   position: sticky;
-   top: 0;
-   z-index: 1000;
    background-color: #4a4a4a;
    color: #ffffff !important;
    padding: 10px 0;
+   transition: top 0.3s;
+}
+
+.sticky {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
 }
 
 nav a {
@@ -74,5 +92,10 @@ section {
 }
 
 footer {
-   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding: 10px 0;
+   margin: 0;
 }
