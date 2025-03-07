@@ -1,0 +1,62 @@
+[
+   {
+       "name": "Masato Takeda",
+       "role": "Navigator",
+       "race": "Human (Japanese)",
+       "origin": "Earth",
+       "height": "5'6\" (168 cm)",
+       "build": "Skinny fat",
+       "gender": "Male",
+       "specialties": "Advanced planetary scanning, navigation, tactical mapping",
+       "gear": "Exo-suit with built-in AI, enhanced sensors, high-tech visor",
+       "personality": "Precise, disciplined, and highly intelligent. Prefers logic over emotions but has a deep sense of loyalty. Also likes to joke around."
+   },
+   {
+       "name": "Emilia Volkov",
+       "role": "Engineer",
+       "race": "Human (Russian)",
+       "origin": "Earth",
+       "height": "5'6\" (168 cm)",
+       "build": "Lean with toned arms",
+       "gender": "Female",
+       "specialties": "Weapon engineering, gadget invention, cybernetics",
+       "gear": "Modular toolkit, multi-purpose gauntlet, prototype plasma weapons",
+       "personality": "Witty, creative, and a bit eccentric. Always working on the next big invention, even if it occasionally backfires."
+   },
+   {
+       "name": "Xyra Voss",
+       "role": "Warrior",
+       "race": "Kordaxian",
+       "origin": "Planet Kordax",
+       "height": "6'3\" (191 cm)",
+       "build": "Extremely muscular and imposing",
+       "gender": "Female",
+       "specialties": "Close-quarters combat, heavy armor tactics, battlefield leadership",
+       "gear": "Energy-infused battle axe, personal shield generator, armored gauntlets",
+       "personality": "Fierce, protective, and honorable. Lives by a warrior’s code and respects strength above all."
+   },
+   {
+       "name": "Selara Dren",
+       "role": "Medic",
+       "race": "Nebulite",
+       "origin": "Nebula-5 Colony",
+       "height": "5'5\" (165 cm)",
+       "build": "Slim but athletic",
+       "gender": "Female",
+       "specialties": "Advanced alien medicine, bio-regeneration, chemical synthesis",
+       "gear": "Portable nano-medpack, shield cloak, precision plasma pistol",
+       "personality": "Calm, compassionate, and highly analytical. Always puts the crew’s well-being first but isn’t afraid to fight when needed."
+   },
+   {
+       "name": "Jex Korr",
+       "role": "Pilot",
+       "race": "Drivak",
+       "origin": "Asteroid Outpost Z-47",
+       "height": "3'2\" (97 cm)",
+       "build": "Small but nimble",
+       "gender": "Male",
+       "specialties": "Expert pilot, evasive maneuvers, high-speed combat",
+       "gear": "Jetpack, dual energy blasters, enhanced reflex neural interface",
+       "personality": "Bold, fast-talking, and slightly reckless. Loves speed and high-risk missions but always gets the job done."
+   }
+]

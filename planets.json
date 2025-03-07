@@ -1,0 +1,26 @@
+[
+   {
+       "name": "Zyphar-7",
+       "description": "A neon-lit cyberpunk metropolis floating above a gas giant.",
+       "image": "zyphar-7.webp",
+       "climate": "Artificially regulated",
+       "terrain": "Floating cityscapes",
+       "attractions": ["AI-powered nightlife", "Zero-G racing", "Sky bazaars"]
+   },
+   {
+      "name": "Aquaria-9",
+      "description": "An oceanic world covered in massive coral megacities.",
+      "image": "aquaria-9.webp",
+      "climate": "Tropical and humid",
+      "terrain": "Deep oceans, floating islands",
+      "attractions": ["Underwater expeditions", "Bioluminescent nightlife", "Giant manta rides"]
+   },
+   {
+       "name": "Vorrak Prime",
+       "description": "A volcanic planet teeming with powerful energy crystals.",
+       "image": "vorrak-prime.webp",
+       "climate": "Extreme heat",
+       "terrain": "Lava fields, obsidian cliffs",
+       "attractions": ["Crystal caverns", "Magma surfing", "Energy mining tours"]
+   }
+]

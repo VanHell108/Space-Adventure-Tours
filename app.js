@@ -31,55 +31,76 @@ document.addEventListener("DOMContentLoaded", () => {
        });
    });
 
-    const planets = [
-        {
-            name: "Zyphar-7",
-            description: "A neon-lit cyberpunk metropolis floating above a gas giant.",
-            image: "Zyphar-7.webp",
-            climate: "Artificially regulated",
-            terrain: "Floating cityscapes",
-            attractions: ["AI-powered nightlife", "Zero-G racing", "Sky bazaars"]
-        },
-        {
-            name: "Vorrak Prime",
-            description: "A volcanic planet teeming with powerful energy crystals.",
-            image: "Vorrak Prime.webp",
-            climate: "Extreme heat",
-            terrain: "Lava fields, obsidian cliffs",
-            attractions: ["Crystal caverns", "Magma surfing", "Energy mining tours"]
-        },
-        {
-            name: "Aquaria-9",
-            description: "An oceanic world covered in massive coral megacities.",
-            image: "Aquaria-9.webp",
-            climate: "Tropical and humid",
-            terrain: "Deep oceans, floating islands",
-            attractions: ["Underwater expeditions", "Bioluminescent nightlife", "Giant manta rides"]
+   fetch('crew.json')
+   .then(response => response.json())
+   .then(data => {
+       const crewAccordion = document.getElementById('crewAccordion');
+       crewAccordion.innerHTML = '';
+
+       data.forEach((crewMember, index) => {
+           const item = document.createElement('div');
+           item.className = 'accordion-item';
+           item.innerHTML = `
+               <h2 class="accordion-header">
+                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#crew${index + 1}">
+                       <i class="bi bi-${getIcon(crewMember.role)}"> ${crewMember.name} - ${crewMember.role}</i>
+                   </button>
+               </h2>
+               <div id="crew${index + 1}" class="accordion-collapse collapse" data-bs-parent="#crewAccordion">
+                   <div class="accordion-body">
+                       <p><strong>Race:</strong> ${crewMember.race}</p>
+                       <p><strong>Origin:</strong> ${crewMember.origin}</p>
+                       <p><strong>Height:</strong> ${crewMember.height}</p>
+                       <p><strong>Build:</strong> ${crewMember.build}</p>
+                       <p><strong>Gender:</strong> ${crewMember.gender}</p>
+                       <p><strong>Specialties:</strong> ${crewMember.specialties}</p>
+                       <p><strong>Gear:</strong> ${crewMember.gear}</p>
+                       <p><strong>Personality:</strong> ${crewMember.personality}</p>
+                   </div>
+               </div>
+           `;
+           crewAccordion.appendChild(item);
+       });
+   });
+
+    const getIcon = (role) => {
+        switch (role) {
+            case 'Navigator': return 'globe';
+            case 'Engineer': return 'wrench';
+            case 'Warrior': return 'shield-shaded';
+            case 'Medic': return 'heart-pulse';
+            case 'Pilot': return 'rocket';
+            default: return 'person';
         }
-    ];
+    }
 
-    const planetList = document.getElementById("planet-list");
-    planetList.classList.add("d-flex", "flex-wrap", "justify-content-center", "gap-3");
+    fetch('planets.json')
+        .then(response => response.json())
+        .then(planets => {
+            const planetList = document.getElementById("planet-list");
+            planetList.classList.add("d-flex", "flex-wrap", "justify-content-center", "gap-3");
 
-    planets.forEach(planet => {
-        const planetCard = document.createElement("div");
-        planetCard.classList.add("col-md-3");
+            planets.forEach(planet => {
+                const planetCard = document.createElement("div");
+                planetCard.classList.add("col-md-3");
 
-        planetCard.innerHTML = `
-            <div class="card">
-                <img src="images/${planet.image}" alt="${planet.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${planet.name}</h5>
-                    <p>${planet.description}</p>
-                    <ul>
-                        <li><strong>Climate:</strong> ${planet.climate}</li>
-                        <li><strong>Terrain:</strong> ${planet.terrain}</li>
-                        <li><strong>Attractions:</strong> ${planet.attractions.join(", ")}</li>
-                    </ul>
-                </div>
-            </div>
-        `;
+                planetCard.innerHTML = `
+                    <div class="card">
+                        <img src="images/${planet.image}" alt="${planet.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${planet.name}</h5>
+                            <p>${planet.description}</p>
+                            <ul>
+                                <li><strong>Climate:</strong> ${planet.climate}</li>
+                                <li><strong>Terrain:</strong> ${planet.terrain}</li>
+                                <li><strong>Attractions:</strong> ${planet.attractions.join(", ")}</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
 
-        planetList.appendChild(planetCard);
-    });
+                planetList.appendChild(planetCard);
+            });
+        })
+        .catch(error => console.error('Error loading planets:', error));
 });
