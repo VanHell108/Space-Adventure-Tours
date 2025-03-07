@@ -158,3 +158,44 @@ footer {
    background-color: #333;
    color: #fff;
 }
+
+.card {
+   border-radius: 12px;
+   overflow: hidden;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   color: #dadada;
+   background-color: #181818;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+}
+
+.card-body {
+   text-align: center;
+   padding: 20px;
+}
+
+.card-title {
+   font-weight: bold;
+   font-size: 1.4rem;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+}
+
+ul li {
+   text-align: left;
+   margin-bottom: 5px;
+}
