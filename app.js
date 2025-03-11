@@ -127,32 +127,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetch('planets.json')
-        .then(response => response.json())
-        .then(planets => {
-            const planetList = document.getElementById("planet-list");
-            planetList.classList.add("d-flex", "flex-wrap", "justify-content-center", "gap-3");
+    .then(response => response.json())
+    .then(planets => {
+        const planetList = document.getElementById("planet-list");
+        planetList.classList.add("d-flex", "flex-wrap", "justify-content-center", "gap-3");
 
-            planets.forEach(planet => {
-                const planetCard = document.createElement("div");
-                planetCard.classList.add("col-md-3");
+        planets.forEach(planet => {
+            const planetCard = document.createElement("div");
+            planetCard.classList.add("col-md-3");
 
-                planetCard.innerHTML = `
-                    <div class="card">
-                        <img src="images/${planet.image}" alt="${planet.name}">
-                        <div class="card-body">
-                            <h5 class="card-title">${planet.name}</h5>
-                            <p>${planet.description}</p>
-                            <ul>
-                                <li><strong>Climate:</strong> ${planet.climate}</li>
-                                <li><strong>Terrain:</strong> ${planet.terrain}</li>
-                                <li><strong>Attractions:</strong> ${planet.attractions.join(", ")}</li>
-                            </ul>
-                        </div>
+            planetCard.innerHTML = `
+                <div class="card" data-bs-toggle="modal" data-bs-target="#planetModal" data-planet='${JSON.stringify(planet)}'>
+                    <img src="images/${planet.image}" alt="${planet.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${planet.name}</h5>
+                        <p>${planet.description}</p>
                     </div>
-                `;
+                </div>
+            `;
 
-                planetList.appendChild(planetCard);
-            });
-        })
-        .catch(error => console.error('Error loading planets:', error));
+            planetList.appendChild(planetCard);
+        });
+    })
+    .catch(error => console.error('Error loading planets:', error));
+
+    const planetModal = document.getElementById('planetModal');
+
+    const modalInstance = new bootstrap.Modal(planetModal);
+
+    document.getElementById("planet-list").addEventListener('click', (event) => {
+        const card = event.target.closest('.card');
+        
+        if (card) {
+            const planetData = JSON.parse(card.getAttribute('data-planet'));
+            
+            document.getElementById('planetModalLabel').innerText = planetData.name;
+            document.getElementById('modalPlanetImage').src = `images/${planetData.image}`;
+            document.getElementById('modalPlanetDescription').innerText = planetData.description;
+            document.getElementById('modalPlanetClimate').innerText = planetData.climate;
+            document.getElementById('modalPlanetTerrain').innerText = planetData.terrain;
+            document.getElementById('modalPlanetAttractions').innerText = planetData.attractions.join(", ");
+
+            modalInstance.show();
+        }
+    });
 });

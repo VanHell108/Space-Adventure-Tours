@@ -170,6 +170,7 @@ footer {
 .card:hover {
    transform: translateY(-5px);
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
 }
 
 .card img {
@@ -202,4 +203,30 @@ ul li {
 
 .is-invalid {
    border-color: #ff1645;
+}
+
+.modal-content {
+   background-color: #222;
+   color: #ddd;
+   border-radius: 10px;
+}
+
+.modal-header {
+   border-bottom: 1px solid #444;
+}
+
+.modal-title {
+   font-weight: bold;
+}
+
+.modal-body {
+   padding: 20px;
+}
+
+.modal-body img {
+   border-radius: 10px;
+}
+
+.btn-close-white {
+   filter: invert(1);
 }
