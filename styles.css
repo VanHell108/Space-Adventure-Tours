@@ -205,6 +205,16 @@ ul li {
    border-color: #ff1645;
 }
 
+.modal-dialog {
+   display: flex;
+   align-items: center;
+   min-height: calc(100vh - 1rem);
+}
+
+.modal-content {
+   margin: auto;
+}
+
 .modal-content {
    background-color: #222;
    color: #ddd;
