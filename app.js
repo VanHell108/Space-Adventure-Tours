@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
     const sticky = header.offsetHeight;
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", () => {
         if (window.scrollY > sticky) {
             navbar.classList.add("sticky");
         } else {
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbarCollapse = document.querySelector(".navbar-collapse");
 
     navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", (event) => {
             event.preventDefault();
 
-            const targetId = this.getAttribute("href");
+            const targetId = event.currentTarget.getAttribute("href");
             const targetSection = document.querySelector(targetId);
 
             if (navbarCollapse.classList.contains("show")) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    function validateEmail(email) {
+    const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
     }
