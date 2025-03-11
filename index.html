@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
     <header class="bg-dark text-white text-center py-4">
@@ -31,39 +32,45 @@
     </nav>
 
     <section id="intro" class="container my-5 p-5">
-        <h2><br>Welcome to Your Next Adventure</h2>
+        <br><h2>Welcome to Your Next Adventure</h2><br>
         <p>Are you ready to explore the universe? At Space Adventure Tours, we’re all about taking you on unforgettable journeys to some of the most amazing places in the galaxy.</p>
         <p>Whether you’re dreaming of cyberpunk cities floating above gas giants or stunning ocean worlds, we’ve got something for everyone. Our friendly crew is here to guide you every step of the way, ensuring you have a blast while discovering new worlds. And if none of our destinations resonate with you, don’t worry! We’re always open to exploring other unknown places, so feel free to reach out and let us know what you have in mind. Grab your gear, and let’s make some incredible memories together!</p>
     </section>
 
     <section id="team" class="container my-5">
-        <h2 class="text-center mb-4">Meet the Crew</h2>
+        <br><h2 class="text-center mb-4">Meet the Crew</h2><br>
         <div class="accordion" id="crewAccordion">
             <!-- Dynamic Crew from a json -->
         </div>
     </section>
 
     <section id="planets" class="container my-5">
-        <h2>Available Destinations</h2>
+        <br><h2>Available Destinations</h2><br>
         <div id="planet-list" class="row">
             <!-- Dynamic Planets from a json -->
+        </div>
+        <div class="mt-4 text-center">
+            <br><p class="lead">At Space Adventure Tours, we believe that the thrill of exploration is priceless. That's why we don't list fixed prices for our journeys. Every adventure is unique, and we want to work with you to create the perfect experience that fits your dreams and budget. After all, we’re not just in it for the money, we share your passion for adventure and discovery! So, let’s talk and make your dream journey a reality!</p>
         </div>
     </section>
 
     <section id="contact" class="container my-5">
-        <h2>Contact Us</h2>
+        <br><h2>Contact Us</h2>
         <form id="contact-form">
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="name" required>
+                <div class="text-danger" id="name-error"></div>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                 <input type="email" class="form-control" id="email" required>
+                <div class="text-danger" id="email-error"></div>
             </div>
             <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
                 <textarea class="form-control" id="message" rows="3" required></textarea>
+                <div class="text-danger" id="message-error"></div>
             </div>
             <div class="text-end">
                 <button type="submit" class="btn btn-primary">Send</button>
